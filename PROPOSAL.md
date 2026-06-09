@@ -11,7 +11,7 @@ The audience includes family members, recipe explorers, stay-at-home moms, chefs
 
 
 **Key action:**
-The most important thing that a visitor should do is sign up for a subscription, so they will continue to come back to the page and receive updates with new recipes.
+The most important thing that a visitor should do is sign up for a subscription, so they will continue to come back to the page and receive updates with new recipes. Success looks like the number of subscriptions increasing each month as well as the number of shares/likes of the recipes increasing each month. Right now, the focus of the website is to provide accessible recipes to others and organize them in one place, when I further the website to include dynamic features in the future, the subcriptions would then be the key action.
 
 
 **Pages/sections needed:**
@@ -24,7 +24,7 @@ I have the list of ingredients, steps, tools needed as well as her email address
 
 
 **Style preferences:** 
-She wants to have a clean looking website and the colors include light pink and brown. She also wants the page to be simplistic with the layout and images and a fancy but flowy font for the text.
+She wants to have a clean looking website and the colors include light pink and brown. She also wants the page to be simplistic with the layout and images and have a fancy but flowy font for the text.
 
 **Inspiration sites:**
 - [[Site 1](https://food52.com/story/5924-introducing-recipe-collections)] - Simple, easy to understand, organized tabs, not much color, and the font isn't aesthetic.
