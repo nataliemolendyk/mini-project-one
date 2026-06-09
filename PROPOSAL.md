@@ -41,3 +41,5 @@ She wants to have a clean looking website and the colors include light pink and 
 - Change the font to one less sharp, has more flow and maybe to a brown color.
 - Maybe add borders around the pictures to help with the blandness.
 - Include boxes around ingredients and bold specific words in steps to help with the aesthetic view.
+
+- [[Website sketch](website-sketch.jpeg)]
