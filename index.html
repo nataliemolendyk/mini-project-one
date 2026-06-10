@@ -1,1 +1,233 @@
-coming soon
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>nely's notebook</title>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<style>
+		:root{
+			--bg:#ffffff;
+			--accent:#8b5e53; /* brown */
+			--muted:#6b6b6b;
+			--card:#fff;
+			--radius:12px;
+		}
+		*{box-sizing:border-box}
+		body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#333;background:var(--bg);}
+		header{display:flex;align-items:center;justify-content:space-between;padding:28px 24px;max-width:1100px;margin:0 auto}
+		.brand{display:flex;align-items:center;gap:14px}
+		.logo{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#c07a73);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Dancing Script',serif;font-size:20px}
+		h1{font-family:'Dancing Script',serif;color:var(--accent);margin:0;font-size:28px}
+		nav{display:flex;gap:10px;align-items:center}
+		.search{padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.08);min-width:220px}
+
+		main{max-width:1100px;margin:18px auto;padding:0 16px 80px}
+		.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+		.chips{display:flex;gap:8px;flex-wrap:wrap}
+		.chip{background:var(--card);border-radius:999px;padding:8px 12px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;color:var(--accent);font-weight:600}
+		.chip.active{background:var(--accent);color:#fff}
+
+		.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+		.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.03)}
+		.card img{width:100%;height:180px;object-fit:cover;display:block}
+		.card-body{padding:12px}
+		.meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+		.title{font-family:'Dancing Script',serif;color:var(--accent);font-size:20px;margin:6px 0}
+		.tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+		.tag{font-size:12px;padding:4px 8px;border-radius:999px;background:#f6e9e8;color:var(--accent);border:1px solid rgba(0,0,0,0.03)}
+
+		.email-capture{margin:26px 0;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff, #fff);display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px dashed rgba(0,0,0,0.06)}
+		.email-capture form{display:flex;gap:8px;align-items:center}
+		.email-capture input[type=email]{padding:10px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+		.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+
+		/* recipe details drawer */
+		.details{position:fixed;right:20px;bottom:20px;left:20px;top:20px;display:none;align-items:center;justify-content:center}
+		.details.open{display:flex}
+		.details .panel{width:100%;max-width:900px;background:var(--card);border-radius:12px;padding:18px;overflow:auto;max-height:90vh;box-shadow:0 10px 40px rgba(0,0,0,0.12)}
+		.close{background:transparent;border:none;font-size:20px;color:var(--muted);cursor:pointer}
+
+		footer{max-width:1100px;margin:40px auto;padding:22px 16px;color:var(--muted);font-size:13px}
+
+		@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.card img{height:150px}}
+		@media (max-width:560px){header{padding:18px} .grid{grid-template-columns:1fr} .search{min-width:120px}}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<div class="logo">N</div>
+			<div>
+				<h1>nely's notebook</h1>
+				<div style="font-size:13px;color:var(--muted)">Recipes by Nely — simple, home-cooked favorites</div>
+			</div>
+		</div>
+
+		<nav>
+			<input id="search" class="search" placeholder="Search recipes or ingredients…" aria-label="search" />
+		</nav>
+	</header>
+
+	<main>
+		<div class="controls">
+			<div class="chips" id="mealChips">
+				<div class="chip active" data-meal="all">All</div>
+				<div class="chip" data-meal="breakfast">Breakfast</div>
+				<div class="chip" data-meal="lunch">Lunch</div>
+				<div class="chip" data-meal="dinner">Dinner</div>
+				<div class="chip" data-meal="dessert">Dessert</div>
+			</div>
+			<div style="margin-left:auto;color:var(--muted);font-size:13px">Filter by dietary: <span style="margin-left:8px">Vegetarian • Gluten-free</span></div>
+		</div>
+
+		<div class="email-capture">
+			<div>
+				<strong style="color:var(--accent)">Join the family list</strong>
+				<div style="font-size:13px;color:var(--muted)">Sign up for updates and new recipes (visual-only at launch)</div>
+			</div>
+			<form id="emailForm" onsubmit="return false;">
+				<input id="emailInput" type="email" placeholder="you@example.com" required />
+				<button class="btn" type="submit">Subscribe</button>
+			</form>
+		</div>
+
+		<section class="grid" id="recipes">
+			<!-- sample recipe cards -->
+			<article class="card" data-title="Banana Bread" data-meal="breakfast" data-tags="vegetarian">
+				<img src="https://images.unsplash.com/photo-1548943487-a2e4d0c5d4b0?auto=format&fit=crop&w=1200&q=60" alt="Banana Bread">
+				<div class="card-body">
+					<div class="meta">Breakfast • 60 min</div>
+					<div class="title">Banana Bread</div>
+					<div class="tags"><div class="tag">banana</div><div class="tag">baking</div></div>
+				</div>
+			</article>
+
+			<article class="card" data-title="Chicken Pot Pie" data-meal="dinner" data-tags="">
+				<img src="https://images.unsplash.com/photo-1604908176972-3b1b6f7b0b2f?auto=format&fit=crop&w=1200&q=60" alt="Chicken Pot Pie">
+				<div class="card-body">
+					<div class="meta">Dinner • 90 min</div>
+					<div class="title">Chicken Pot Pie</div>
+					<div class="tags"><div class="tag">comfort</div><div class="tag">family</div></div>
+				</div>
+			</article>
+
+			<article class="card" data-title="Chocolate Cake" data-meal="dessert" data-tags="vegetarian">
+				<img src="https://images.unsplash.com/photo-1542826438-9b4c9b0f0a23?auto=format&fit=crop&w=1200&q=60" alt="Chocolate Cake">
+				<div class="card-body">
+					<div class="meta">Dessert • 75 min</div>
+					<div class="title">Chocolate Cake</div>
+					<div class="tags"><div class="tag">chocolate</div><div class="tag">baking</div></div>
+				</div>
+			</article>
+
+			<article class="card" data-title="Avocado Toast" data-meal="breakfast" data-tags="vegetarian,gluten-free">
+				<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=60" alt="Avocado Toast">
+				<div class="card-body">
+					<div class="meta">Breakfast • 10 min</div>
+					<div class="title">Avocado Toast</div>
+					<div class="tags"><div class="tag">quick</div><div class="tag">healthy</div></div>
+				</div>
+			</article>
+
+			<article class="card" data-title="Pasta Primavera" data-meal="lunch" data-tags="vegetarian">
+				<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=1200&q=60" alt="Pasta Primavera">
+				<div class="card-body">
+					<div class="meta">Lunch • 30 min</div>
+					<div class="title">Pasta Primavera</div>
+					<div class="tags"><div class="tag">pasta</div><div class="tag">vegetables</div></div>
+				</div>
+			</article>
+		</section>
+
+		<div style="margin-top:18px;color:var(--muted);font-size:13px">Showing family favorites. Want more? Ask Nely to send her recipe book.</div>
+
+	</main>
+
+	<div class="details" id="details">
+		<div class="panel" role="dialog" aria-modal="true">
+			<div style="display:flex;justify-content:space-between;align-items:center">
+				<h2 id="detailTitle" style="margin:0;font-family:'Dancing Script',serif;color:var(--accent)"></h2>
+				<button class="close" id="closeBtn">✕</button>
+			</div>
+			<div id="detailContent" style="margin-top:12px"></div>
+		</div>
+	</div>
+
+	<footer>
+		© Nely's Recipes — Contact: nely@example.com
+	</footer>
+
+	<script>
+		// Basic search and meal filter + detail view
+		const searchEl = document.getElementById('search');
+		const chips = document.querySelectorAll('.chip');
+		const cards = Array.from(document.querySelectorAll('.card'));
+		const recipes = document.getElementById('recipes');
+		const details = document.getElementById('details');
+		const detailTitle = document.getElementById('detailTitle');
+		const detailContent = document.getElementById('detailContent');
+		const closeBtn = document.getElementById('closeBtn');
+
+		function renderFilter(){
+			const q = searchEl.value.trim().toLowerCase();
+			const activeMeal = document.querySelector('.chip.active').dataset.meal;
+			cards.forEach(c=>{
+				const title = c.dataset.title.toLowerCase();
+				const tags = (c.dataset.tags||'').toLowerCase();
+				const meal = c.dataset.meal;
+				const matchesQ = q === '' || title.includes(q) || tags.includes(q) || c.textContent.toLowerCase().includes(q);
+				const matchesMeal = activeMeal === 'all' || meal === activeMeal;
+				c.style.display = (matchesQ && matchesMeal) ? '' : 'none';
+			});
+		}
+
+		searchEl.addEventListener('input',renderFilter);
+		chips.forEach(ch=>ch.addEventListener('click',()=>{
+			chips.forEach(c=>c.classList.remove('active'));
+			ch.classList.add('active');
+			renderFilter();
+		}));
+
+		// Click card -> open details (static sample content)
+		cards.forEach(c=>c.addEventListener('click',()=>{
+			const title = c.dataset.title;
+			detailTitle.textContent = title;
+			// For demo, show sample structure — in real site, expand with full recipe data
+			detailContent.innerHTML = `
+				<img src="${c.querySelector('img').src}" style="width:100%;max-height:280px;object-fit:cover;border-radius:8px;margin-bottom:10px">
+				<h3 style="margin:6px 0">Ingredients</h3>
+				<ul>
+					<li>Ingredient 1</li>
+					<li>Ingredient 2</li>
+					<li>Ingredient 3</li>
+				</ul>
+				<h3 style="margin:6px 0">Steps</h3>
+				<ol>
+					<li>Preheat / Prepare</li>
+					<li>Mix / Cook</li>
+					<li>Serve</li>
+				</ol>
+				<div style="margin-top:12px;color:var(--muted)">Tools: bowl, spoon, oven</div>
+			`;
+			details.classList.add('open');
+		}));
+
+		closeBtn.addEventListener('click',()=>details.classList.remove('open'));
+		details.addEventListener('click',(e)=>{ if(e.target===details) details.classList.remove('open') });
+
+		// email capture
+		document.getElementById('emailForm').addEventListener('submit',e=>{
+			e.preventDefault();
+			const email = document.getElementById('emailInput').value;
+			if(!email) return;
+			localStorage.setItem('family_recipes_email', email);
+			alert('Thanks! Your email is saved locally for now.');
+			document.getElementById('emailInput').value = '';
+		});
+
+		// initial render
+		renderFilter();
+	</script>
+</body>
+</html>
