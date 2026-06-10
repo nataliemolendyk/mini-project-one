@@ -5,81 +5,23 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>nely's notebook</title>
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-	<style>
-		:root{
-			--bg:#ffffff;
-			--accent:#8b5e53; /* brown */
-			--muted:#6b6b6b;
-			--card:#fff;
-			--radius:12px;
-		}
-		*{box-sizing:border-box}
-		body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#333;background:var(--bg);}
-		header{display:flex;align-items:center;justify-content:space-between;padding:28px 24px;max-width:1100px;margin:0 auto}
-		.brand{display:flex;align-items:center;gap:14px}
-		.logo{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#c07a73);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Dancing Script',serif;font-size:20px}
-		h1{font-family:'Dancing Script',serif;color:var(--accent);margin:0;font-size:28px}
-		nav{display:flex;gap:10px;align-items:center}
-		.search{padding:10px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.08);min-width:220px}
-
-		main{max-width:1100px;margin:18px auto;padding:0 16px 80px}
-		.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
-		.chips{display:flex;gap:8px;flex-wrap:wrap}
-		.chip{background:var(--card);border-radius:999px;padding:8px 12px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;color:var(--accent);font-weight:600}
-		.chip.active{background:var(--accent);color:#fff}
-
-		.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-		.card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.06);border:1px solid rgba(0,0,0,0.03)}
-		.card img{width:100%;height:180px;object-fit:cover;display:block}
-		.card-body{padding:12px}
-		.meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
-		.title{font-family:'Dancing Script',serif;color:var(--accent);font-size:20px;margin:6px 0}
-		.tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
-		.tag{font-size:12px;padding:4px 8px;border-radius:999px;background:#f6e9e8;color:var(--accent);border:1px solid rgba(0,0,0,0.03)}
-
-		.email-capture{margin:26px 0;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff, #fff);display:flex;gap:12px;align-items:center;justify-content:space-between;border:1px dashed rgba(0,0,0,0.06)}
-		.email-capture form{display:flex;gap:8px;align-items:center}
-		.email-capture input[type=email]{padding:10px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
-		.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
-
-		/* recipe details drawer */
-		.details{position:fixed;right:20px;bottom:20px;left:20px;top:20px;display:none;align-items:center;justify-content:center}
-		.details.open{display:flex}
-		.details .panel{width:100%;max-width:900px;background:var(--card);border-radius:12px;padding:18px;overflow:auto;max-height:90vh;box-shadow:0 10px 40px rgba(0,0,0,0.12)}
-		.close{background:transparent;border:none;font-size:20px;color:var(--muted);cursor:pointer}
-
-		footer{max-width:1100px;margin:40px auto;padding:22px 16px;color:var(--muted);font-size:13px}
-
-		@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.card img{height:150px}}
-		@media (max-width:560px){header{padding:18px} .grid{grid-template-columns:1fr} .search{min-width:120px}}
-	</style>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
-		<div class="brand">
-			<div class="logo">N</div>
-			<div>
-				<h1>Nely's Notebook</h1>
-				<div style="font-size:13px;color:var(--muted)">Recipes by Nely — simple, home-cooked favorites</div>
-			</div>
-		</div>
-
-		<nav>
-			<input id="search" class="search" placeholder="Search recipes or ingredients…" aria-label="search" />
-		</nav>
-	</header>
 
 	<main>
-		<div class="controls">
-			<div class="chips" id="mealChips">
-				<div class="chip active" data-meal="all">All</div>
-				<div class="chip" data-meal="breakfast">Breakfast</div>
-				<div class="chip" data-meal="lunch">Lunch</div>
-				<div class="chip" data-meal="dinner">Dinner</div>
-				<div class="chip" data-meal="dessert">Dessert</div>
+		<section class="hero">
+			<div class="overlay"></div>
+			<div class="content">
+				<div class="hero-top" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+					<div>
+						<h2>nely's notebook</h2>
+						<p>Family recipes, organized and preserved — simple, clean, and easy to follow.</p>
+					</div>
+					<input id="search" class="search" placeholder="Search recipes or ingredients…" aria-label="search" />
+				</div>
 			</div>
-			<div style="margin-left:auto;color:var(--muted);font-size:13px">Filter by dietary: <span style="margin-left:8px">Vegetarian • Gluten-free</span></div>
-		</div>
+		</section>
 
 		<div class="email-capture">
 			<div>
@@ -92,9 +34,60 @@
 			</form>
 		</div>
 
+		<div class="controls">
+			<div class="chips" id="mealChips">
+				<div class="chip active" data-meal="all">All</div>
+				<div class="chip" data-meal="breakfast">Breakfast</div>
+				<div class="chip" data-meal="lunch">Lunch</div>
+				<div class="chip" data-meal="dinner">Dinner</div>
+				<div class="chip" data-meal="dessert">Dessert</div>
+			</div>
+		</div>
+
+		<!-- Home actions: Recipes and Preferences as tabs -->
+		<section id="homeActions" class="tabs">
+			<div class="tabs-nav" role="tablist">
+				<button class="tab active" data-tab="recipesTab" role="tab" aria-selected="true">Recipes</button>
+				<button class="tab" data-tab="preferencesTab" role="tab" aria-selected="false">Preferences</button>
+			</div>
+			<div class="tabs-panels">
+				<div id="recipesTab" class="tab-panel active" role="tabpanel">
+					<div class="panel-controls">
+						<div>
+							<h3>Recipes</h3>
+							<div class="recipes-actions">
+								<button class="btn small" data-meal-action="breakfast">Breakfast</button>
+								<button class="btn small" data-meal-action="lunch">Lunch</button>
+								<button class="btn small" data-meal-action="dinner">Dinner</button>
+								<button class="btn small" data-meal-action="dessert">Dessert</button>
+								<button class="btn small" data-meal-action="snack">Snack</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="preferencesTab" class="tab-panel" role="tabpanel" aria-hidden="true">
+					<div class="panel-controls">
+						<div>
+							<h3>Preferences</h3>
+							<div class="prefs-actions">
+								<button class="btn small" data-pref="vegetarian">Vegetarian</button>
+								<button class="btn small" data-pref="low-calorie">Low-calorie</button>
+								<button class="btn small" data-pref="high-protein">High protein</button>
+								<button class="btn small" data-pref="vegan">Vegan</button>
+								<button class="btn small" data-pref="clean">Clean</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Collection view (hidden by default) -->
+		<section id="collectionView" style="display:none;margin-top:18px"></section>
+
 		<section class="grid" id="recipes">
 			<!-- sample recipe cards -->
-			<article class="card" data-title="Banana Bread" data-meal="breakfast" data-tags="vegetarian">
+			<article class="card" data-title="Banana Bread" data-meal="breakfast" data-tags="vegetarian" data-keywords="banana,baking,vegetarian,breakfast">
 				<img src="https://images.unsplash.com/photo-1548943487-a2e4d0c5d4b0?auto=format&fit=crop&w=1200&q=60" alt="Banana Bread">
 				<div class="card-body">
 					<div class="meta">Breakfast • 60 min</div>
@@ -103,7 +96,7 @@
 				</div>
 			</article>
 
-			<article class="card" data-title="Chicken Pot Pie" data-meal="dinner" data-tags="">
+			<article class="card" data-title="Chicken Pot Pie" data-meal="dinner" data-tags="" data-keywords="chicken,comfort,family,protein,dinner">
 				<img src="https://images.unsplash.com/photo-1604908176972-3b1b6f7b0b2f?auto=format&fit=crop&w=1200&q=60" alt="Chicken Pot Pie">
 				<div class="card-body">
 					<div class="meta">Dinner • 90 min</div>
@@ -112,7 +105,7 @@
 				</div>
 			</article>
 
-			<article class="card" data-title="Chocolate Cake" data-meal="dessert" data-tags="vegetarian">
+			<article class="card" data-title="Chocolate Cake" data-meal="dessert" data-tags="vegetarian" data-keywords="chocolate,baking,vegetarian,dessert">
 				<img src="https://images.unsplash.com/photo-1542826438-9b4c9b0f0a23?auto=format&fit=crop&w=1200&q=60" alt="Chocolate Cake">
 				<div class="card-body">
 					<div class="meta">Dessert • 75 min</div>
@@ -121,7 +114,7 @@
 				</div>
 			</article>
 
-			<article class="card" data-title="Avocado Toast" data-meal="breakfast" data-tags="vegetarian,gluten-free">
+			<article class="card" data-title="Avocado Toast" data-meal="breakfast" data-tags="vegetarian,gluten-free" data-keywords="avocado,vegetables,vegetarian,gluten-free,low-calorie,breakfast">
 				<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=60" alt="Avocado Toast">
 				<div class="card-body">
 					<div class="meta">Breakfast • 10 min</div>
@@ -130,12 +123,22 @@
 				</div>
 			</article>
 
-			<article class="card" data-title="Pasta Primavera" data-meal="lunch" data-tags="vegetarian">
+			<article class="card" data-title="Pasta Primavera" data-meal="lunch" data-tags="vegetarian" data-keywords="pasta,vegetables,vegetarian,lunch">
 				<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=1200&q=60" alt="Pasta Primavera">
 				<div class="card-body">
 					<div class="meta">Lunch • 30 min</div>
 					<div class="title">Pasta Primavera</div>
 					<div class="tags"><div class="tag">pasta</div><div class="tag">vegetables</div></div>
+				</div>
+			</article>
+
+			<!-- sample snack -->
+			<article class="card" data-title="Granola Bar" data-meal="snack" data-tags="vegetarian" data-keywords="granola,oats,snack,vegetarian,clean">
+				<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=60" alt="Granola Bar">
+				<div class="card-body">
+					<div class="meta">Snack • 15 min</div>
+					<div class="title">Granola Bar</div>
+					<div class="tags"><div class="tag">oats</div><div class="tag">snack</div></div>
 				</div>
 			</article>
 		</section>
@@ -147,7 +150,7 @@
 	<div class="details" id="details">
 		<div class="panel" role="dialog" aria-modal="true">
 			<div style="display:flex;justify-content:space-between;align-items:center">
-				<h2 id="detailTitle" style="margin:0;font-family:'Dancing Script',serif;color:var(--accent)"></h2>
+				<h2 id="detailTitle" style="margin:0;font-family:Georgia, 'Times New Roman', serif;color:var(--accent);font-weight:700"></h2>
 				<button class="close" id="closeBtn">✕</button>
 			</div>
 			<div id="detailContent" style="margin-top:12px"></div>
@@ -228,6 +231,99 @@
 
 		// initial render
 		renderFilter();
+
+		// Preference keywords mapping and collection view
+		const prefKeywords = {
+			'vegetarian': ['vegetable','vegetables','no meat','meatless','vegetarian','plant'],
+			'low-calorie': ['low-calorie','low calorie','light','low-cal','lowcalorie','low'],
+			'high-protein': ['protein','high protein','chicken','beef','tofu','eggs','lentils','meat'],
+			'vegan': ['vegan','plant-based','no dairy','no eggs','plant based'],
+			'clean': ['clean','whole','unprocessed','no sugar','clean eating']
+		};
+
+		const mealButtons = document.querySelectorAll('[data-meal-action]');
+		const prefButtons = document.querySelectorAll('[data-pref]');
+		const collectionView = document.getElementById('collectionView');
+
+		mealButtons.forEach(b=>b.addEventListener('click',()=>{
+			showCollection({meal:b.dataset.mealAction});
+		}));
+
+		prefButtons.forEach(b=>b.addEventListener('click',()=>{
+			showCollection({preference:b.dataset.pref});
+		}));
+
+		function getKeywords(card){
+			return (card.dataset.keywords||card.dataset.tags||'').toLowerCase().split(/[,\s]+/).filter(Boolean);
+		}
+
+		function showCollection({meal=null, preference=null}={}){
+			// hide main recipes view and show collectionView
+			document.querySelector('main').scrollIntoView({behavior:'smooth'});
+			collectionView.style.display = '';
+			recipes.style.display = 'none';
+			// build view
+			const meals = ['breakfast','lunch','dinner','dessert','snack'];
+			let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+				<h2 style="margin:0;color:var(--accent)">Results</h2>
+				<button class=\"btn\" id=\"backHome\">Back</button>
+			</div>`;
+
+			meals.forEach(m=>{
+				const matched = cards.filter(c=>{
+					if(meal && c.dataset.meal !== meal) return false;
+					if(preference){
+						const keywords = getKeywords(c);
+						const prefs = prefKeywords[preference]||[];
+						return prefs.some(p=>keywords.some(k=>k.includes(p)));
+					}
+					return !meal || c.dataset.meal === m;
+				});
+
+				html += `<section style="margin-top:12px">
+					<h3 style=\"margin:6px 0;text-transform:capitalize\">${m}</h3>`;
+				if(matched.length===0){
+					html += `<div style=\"color:var(--muted)\">No recipes found</div>`;
+				} else {
+					html += `<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px\">`;
+					matched.forEach(c=>{
+						html += `<div class=\"card\" data-col-title=\"${c.dataset.title}\" style=\"cursor:pointer\">`;
+						html += `<img src=\"${c.querySelector('img').src}\" alt=\"${c.dataset.title}\" style=\"height:120px;object-fit:cover\">`;
+						html += `<div class=\"card-body\"><div class=\"meta\">${c.querySelector('.meta').textContent}</div><div class=\"title\">${c.dataset.title}</div></div></div>`;
+					});
+					html += `</div>`;
+				}
+				html += `</section>`;
+			});
+
+			collectionView.innerHTML = html;
+
+			// wire back button
+			document.getElementById('backHome').addEventListener('click',()=>{
+				collectionView.style.display='none';
+				recipes.style.display='grid';
+			});
+
+			// wire clicks on collection cards to open details
+			collectionView.querySelectorAll('[data-col-title]').forEach(el=>el.addEventListener('click',()=>{
+				const title = el.dataset.colTitle;
+				const target = cards.find(c=>c.dataset.title===title);
+				if(target) target.click();
+			}));
+
+			// Tabs interaction: switch panels and set active state
+			const tabButtons = document.querySelectorAll('.tab');
+			const tabPanels = document.querySelectorAll('.tab-panel');
+			tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
+				tabButtons.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+				tabPanels.forEach(p=>{ p.classList.remove('active'); p.setAttribute('aria-hidden','true'); });
+				btn.classList.add('active');
+				btn.setAttribute('aria-selected','true');
+				const id = btn.dataset.tab;
+				const panel = document.getElementById(id);
+				if(panel){ panel.classList.add('active'); panel.setAttribute('aria-hidden','false'); panel.scrollIntoView({behavior:'smooth'}); }
+			}));
+		}
 	</script>
 </body>
 </html>
