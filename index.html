@@ -1,329 +1,143 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>nely's notebook</title>
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Nely's Notebook</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-	<main>
-		<section class="hero">
-			<div class="overlay"></div>
-			<div class="content">
-				<div class="hero-top" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-					<div>
-						<h2>nely's notebook</h2>
-						<p>Family recipes, organized and preserved — simple, clean, and easy to follow.</p>
-					</div>
-					<input id="search" class="search" placeholder="Search recipes or ingredients…" aria-label="search" />
-				</div>
-			</div>
-		</section>
-
-		<div class="email-capture">
-			<div>
-				<strong style="color:var(--accent)">Join the family list</strong>
-				<div style="font-size:13px;color:var(--muted)">Sign up for updates and new recipes (visual-only at launch)</div>
-			</div>
-			<form id="emailForm" onsubmit="return false;">
-				<input id="emailInput" type="email" placeholder="you@example.com" required />
-				<button class="btn" type="submit">Subscribe</button>
-			</form>
-		</div>
-
-		<div class="controls">
-			<div class="chips" id="mealChips">
-				<div class="chip active" data-meal="all">All</div>
-				<div class="chip" data-meal="breakfast">Breakfast</div>
-				<div class="chip" data-meal="lunch">Lunch</div>
-				<div class="chip" data-meal="dinner">Dinner</div>
-				<div class="chip" data-meal="dessert">Dessert</div>
-			</div>
-		</div>
-
-		<!-- Home actions: Recipes and Preferences as tabs -->
-		<section id="homeActions" class="tabs">
-			<div class="tabs-nav" role="tablist">
-				<button class="tab active" data-tab="recipesTab" role="tab" aria-selected="true">Recipes</button>
-				<button class="tab" data-tab="preferencesTab" role="tab" aria-selected="false">Preferences</button>
-			</div>
-			<div class="tabs-panels">
-				<div id="recipesTab" class="tab-panel active" role="tabpanel">
-					<div class="panel-controls">
-						<div>
-							<h3>Recipes</h3>
-							<div class="recipes-actions">
-								<button class="btn small" data-meal-action="breakfast">Breakfast</button>
-								<button class="btn small" data-meal-action="lunch">Lunch</button>
-								<button class="btn small" data-meal-action="dinner">Dinner</button>
-								<button class="btn small" data-meal-action="dessert">Dessert</button>
-								<button class="btn small" data-meal-action="snack">Snack</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="preferencesTab" class="tab-panel" role="tabpanel" aria-hidden="true">
-					<div class="panel-controls">
-						<div>
-							<h3>Preferences</h3>
-							<div class="prefs-actions">
-								<button class="btn small" data-pref="vegetarian">Vegetarian</button>
-								<button class="btn small" data-pref="low-calorie">Low-calorie</button>
-								<button class="btn small" data-pref="high-protein">High protein</button>
-								<button class="btn small" data-pref="vegan">Vegan</button>
-								<button class="btn small" data-pref="clean">Clean</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Collection view (hidden by default) -->
-		<section id="collectionView" style="display:none;margin-top:18px"></section>
-
-		<section class="grid" id="recipes">
-			<!-- sample recipe cards -->
-			<article class="card" data-title="Banana Bread" data-meal="breakfast" data-tags="vegetarian" data-keywords="banana,baking,vegetarian,breakfast">
-				<img src="https://images.unsplash.com/photo-1548943487-a2e4d0c5d4b0?auto=format&fit=crop&w=1200&q=60" alt="Banana Bread">
-				<div class="card-body">
-					<div class="meta">Breakfast • 60 min</div>
-					<div class="title">Banana Bread</div>
-					<div class="tags"><div class="tag">banana</div><div class="tag">baking</div></div>
-				</div>
-			</article>
-
-			<article class="card" data-title="Chicken Pot Pie" data-meal="dinner" data-tags="" data-keywords="chicken,comfort,family,protein,dinner">
-				<img src="https://images.unsplash.com/photo-1604908176972-3b1b6f7b0b2f?auto=format&fit=crop&w=1200&q=60" alt="Chicken Pot Pie">
-				<div class="card-body">
-					<div class="meta">Dinner • 90 min</div>
-					<div class="title">Chicken Pot Pie</div>
-					<div class="tags"><div class="tag">comfort</div><div class="tag">family</div></div>
-				</div>
-			</article>
-
-			<article class="card" data-title="Chocolate Cake" data-meal="dessert" data-tags="vegetarian" data-keywords="chocolate,baking,vegetarian,dessert">
-				<img src="https://images.unsplash.com/photo-1542826438-9b4c9b0f0a23?auto=format&fit=crop&w=1200&q=60" alt="Chocolate Cake">
-				<div class="card-body">
-					<div class="meta">Dessert • 75 min</div>
-					<div class="title">Chocolate Cake</div>
-					<div class="tags"><div class="tag">chocolate</div><div class="tag">baking</div></div>
-				</div>
-			</article>
-
-			<article class="card" data-title="Avocado Toast" data-meal="breakfast" data-tags="vegetarian,gluten-free" data-keywords="avocado,vegetables,vegetarian,gluten-free,low-calorie,breakfast">
-				<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=60" alt="Avocado Toast">
-				<div class="card-body">
-					<div class="meta">Breakfast • 10 min</div>
-					<div class="title">Avocado Toast</div>
-					<div class="tags"><div class="tag">quick</div><div class="tag">healthy</div></div>
-				</div>
-			</article>
-
-			<article class="card" data-title="Pasta Primavera" data-meal="lunch" data-tags="vegetarian" data-keywords="pasta,vegetables,vegetarian,lunch">
-				<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=1200&q=60" alt="Pasta Primavera">
-				<div class="card-body">
-					<div class="meta">Lunch • 30 min</div>
-					<div class="title">Pasta Primavera</div>
-					<div class="tags"><div class="tag">pasta</div><div class="tag">vegetables</div></div>
-				</div>
-			</article>
-
-			<!-- sample snack -->
-			<article class="card" data-title="Granola Bar" data-meal="snack" data-tags="vegetarian" data-keywords="granola,oats,snack,vegetarian,clean">
-				<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=60" alt="Granola Bar">
-				<div class="card-body">
-					<div class="meta">Snack • 15 min</div>
-					<div class="title">Granola Bar</div>
-					<div class="tags"><div class="tag">oats</div><div class="tag">snack</div></div>
-				</div>
-			</article>
-		</section>
-
-		<div style="margin-top:18px;color:var(--muted);font-size:13px">Showing family favorites. Want more? Ask Nely to send her recipe book.</div>
-
-	</main>
-
-	<div class="details" id="details">
-		<div class="panel" role="dialog" aria-modal="true">
-			<div style="display:flex;justify-content:space-between;align-items:center">
-				<h2 id="detailTitle" style="margin:0;font-family:Georgia, 'Times New Roman', serif;color:var(--accent);font-weight:700"></h2>
-				<button class="close" id="closeBtn">✕</button>
-			</div>
-			<div id="detailContent" style="margin-top:12px"></div>
-		</div>
+	<div class="top-bar">
+	<div class="top-bar-inner">
+	<div class="top-meals">
+		<button class="top-meal-btn active" data-meal="all">All</button>
+		<button class="top-meal-btn" data-meal="breakfast">Breakfast</button>
+		<button class="top-meal-btn" data-meal="lunch">Lunch</button>
+		<button class="top-meal-btn" data-meal="dinner">Dinner</button>
+		<button class="top-meal-btn" data-meal="dessert">Dessert</button>
+	</div>
+		<div class="top-prefs">
+			<button class="top-pref-btn active" data-pref="all">All</button>
+			<button class="top-pref-btn" data-pref="vegetarian">Vegetarian</button>
+			<button class="top-pref-btn" data-pref="vegan">Vegan</button>
+			<button class="top-pref-btn" data-pref="clean">Clean</button>
+	</div>
+	</div>
 	</div>
 
-	<footer>
-		© Nely's Recipes — Contact: nely@example.com
-	</footer>
+<main>
+	<section class="hero">
+	<div class="hero-content">
+	<h1>Nely's Notebook</h1>
+	<p>Family recipes saved forever.</p>
+	<input id="search" class="search" placeholder="Search recipes...">
+			<div class="email-capture hero-email">
+				<div>
+					<strong style="color:var(--brown)">Join the family list</strong>
+					<div style="font-size:13px;color:var(--muted)">Sign up for updates and new recipes (visual-only at launch)</div>
+				</div>
+				<form id="emailForm" onsubmit="return false;">
+					<input id="emailInput" type="email" placeholder="you@example.com" required />
+					<button class="btn" type="submit">Subscribe</button>
+				</form>
+			</div>
+	</div>
+	</section>
 
-	<script>
-		// Basic search and meal filter + detail view
-		const searchEl = document.getElementById('search');
-		const chips = document.querySelectorAll('.chip');
-		const cards = Array.from(document.querySelectorAll('.card'));
-		const recipes = document.getElementById('recipes');
-		const details = document.getElementById('details');
-		const detailTitle = document.getElementById('detailTitle');
-		const detailContent = document.getElementById('detailContent');
-		const closeBtn = document.getElementById('closeBtn');
+<div class="recipe-upload">
+	<input id="recipePhoto" type="file" accept="image/*" capture="environment" hidden>
+	<button class="btn" id="scanBtn">📸 Scan Recipe</button>
+</div>
 
-		function renderFilter(){
-			const q = searchEl.value.trim().toLowerCase();
-			const activeMeal = document.querySelector('.chip.active').dataset.meal;
-			cards.forEach(c=>{
-				const title = c.dataset.title.toLowerCase();
-				const tags = (c.dataset.tags||'').toLowerCase();
-				const meal = c.dataset.meal;
-				const matchesQ = q === '' || title.includes(q) || tags.includes(q) || c.textContent.toLowerCase().includes(q);
-				const matchesMeal = activeMeal === 'all' || meal === activeMeal;
-				c.style.display = (matchesQ && matchesMeal) ? '' : 'none';
-			});
-		}
 
-		searchEl.addEventListener('input',renderFilter);
-		chips.forEach(ch=>ch.addEventListener('click',()=>{
-			chips.forEach(c=>c.classList.remove('active'));
-			ch.classList.add('active');
-			renderFilter();
-		}));
+<section class="grid" id="recipes">
 
-		// Click card -> open details (static sample content)
-		cards.forEach(c=>c.addEventListener('click',()=>{
-			const title = c.dataset.title;
-			detailTitle.textContent = title;
-			// For demo, show sample structure — in real site, expand with full recipe data
-			detailContent.innerHTML = `
-				<img src="${c.querySelector('img').src}" style="width:100%;max-height:280px;object-fit:cover;border-radius:8px;margin-bottom:10px">
-				<h3 style="margin:6px 0">Ingredients</h3>
-				<ul>
-					<li>Ingredient 1</li>
-					<li>Ingredient 2</li>
-					<li>Ingredient 3</li>
-				</ul>
-				<h3 style="margin:6px 0">Steps</h3>
-				<ol>
-					<li>Preheat / Prepare</li>
-					<li>Mix / Cook</li>
-					<li>Serve</li>
-				</ol>
-				<div style="margin-top:12px;color:var(--muted)">Tools: bowl, spoon, oven</div>
-			`;
-			details.classList.add('open');
-		}));
+	<article class="card" data-title="banana bread" data-meal="breakfast" data-keywords="banana baking vegetarian">
+	<img src="https://images.unsplash.com/photo-1548943487-a2e4d0c5d4b0">
+	<div class="card-body">
+	<div class="meta">Breakfast • 60 min</div>
+	<h2>Banana Bread</h2>
+		<div class="tags">
+		<span class="tag">banana</span>
+		<span class="tag">baking</span>
+	</div>
+	</div>
+	</article>
 
-		closeBtn.addEventListener('click',()=>details.classList.remove('open'));
-		details.addEventListener('click',(e)=>{ if(e.target===details) details.classList.remove('open') });
+	<article class="card" data-title="chocolate cake" data-meal="dessert" data-keywords="chocolate baking vegetarian">
+	<img src="https://images.unsplash.com/photo-1542826438-9b4c9b0f0a23">
+	<div class="card-body">
+	<div class="meta">Dessert • 75 min</div>
+	<h2>Chocolate Cake</h2>
+		<div class="tags">
+		<span class="tag">chocolate</span>
+		<span class="tag">cake</span>
+		</div>
+	</div>
+	</article>
 
-		// email capture
-		document.getElementById('emailForm').addEventListener('submit',e=>{
-			e.preventDefault();
-			const email = document.getElementById('emailInput').value;
-			if(!email) return;
-			localStorage.setItem('family_recipes_email', email);
-			alert('Thanks! Your email is saved locally for now.');
-			document.getElementById('emailInput').value = '';
-		});
+</section>
+</main>
 
-		// initial render
-		renderFilter();
+<div class="details" id="details">
+<div class="panel">
+	<button id="closeBtn">✕</button>
+<h2 id="detailTitle"></h2>
+	<div id="detailContent"></div>
+</div>
+</div>
 
-		// Preference keywords mapping and collection view
-		const prefKeywords = {
-			'vegetarian': ['vegetable','vegetables','no meat','meatless','vegetarian','plant'],
-			'low-calorie': ['low-calorie','low calorie','light','low-cal','lowcalorie','low'],
-			'high-protein': ['protein','high protein','chicken','beef','tofu','eggs','lentils','meat'],
-			'vegan': ['vegan','plant-based','no dairy','no eggs','plant based'],
-			'clean': ['clean','whole','unprocessed','no sugar','clean eating']
-		};
+<footer>© Nely's Recipes</footer>
 
-		const mealButtons = document.querySelectorAll('[data-meal-action]');
-		const prefButtons = document.querySelectorAll('[data-pref]');
-		const collectionView = document.getElementById('collectionView');
+<script>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+let meal="all",pref="all";
 
-		mealButtons.forEach(b=>b.addEventListener('click',()=>{
-			showCollection({meal:b.dataset.mealAction});
-		}));
+function filter(){
+let q=search.value.toLowerCase();
+cards.forEach(card=>{
+let show=card.dataset.title.includes(q)&&(meal==="all"||card.dataset.meal===meal)&&(pref==="all"||card.dataset.keywords.includes(pref));
+card.style.display=show?"":"none";
+});
+}
 
-		prefButtons.forEach(b=>b.addEventListener('click',()=>{
-			showCollection({preference:b.dataset.pref});
-		}));
+search.oninput=filter;
 
-		function getKeywords(card){
-			return (card.dataset.keywords||card.dataset.tags||'').toLowerCase().split(/[,\s]+/).filter(Boolean);
-		}
+document.querySelectorAll(".top-meal-btn").forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll(".top-meal-btn").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+meal=btn.dataset.meal;
+filter();
+};
+});
 
-		function showCollection({meal=null, preference=null}={}){
-			// hide main recipes view and show collectionView
-			document.querySelector('main').scrollIntoView({behavior:'smooth'});
-			collectionView.style.display = '';
-			recipes.style.display = 'none';
-			// build view
-			const meals = ['breakfast','lunch','dinner','dessert','snack'];
-			let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-				<h2 style="margin:0;color:var(--accent)">Results</h2>
-				<button class=\"btn\" id=\"backHome\">Back</button>
-			</div>`;
+document.querySelectorAll(".top-pref-btn").forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll(".top-pref-btn").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+pref=btn.dataset.pref;
+filter();
+};
+});
 
-			meals.forEach(m=>{
-				const matched = cards.filter(c=>{
-					if(meal && c.dataset.meal !== meal) return false;
-					if(preference){
-						const keywords = getKeywords(c);
-						const prefs = prefKeywords[preference]||[];
-						return prefs.some(p=>keywords.some(k=>k.includes(p)));
-					}
-					return !meal || c.dataset.meal === m;
-				});
+cards.forEach(card=>{
+card.onclick=()=>{
+document.getElementById("detailTitle").textContent=card.dataset.title;
+document.getElementById("details").classList.add("open");
+};
+});
 
-				html += `<section style="margin-top:12px">
-					<h3 style=\"margin:6px 0;text-transform:capitalize\">${m}</h3>`;
-				if(matched.length===0){
-					html += `<div style=\"color:var(--muted)\">No recipes found</div>`;
-				} else {
-					html += `<div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px\">`;
-					matched.forEach(c=>{
-						html += `<div class=\"card\" data-col-title=\"${c.dataset.title}\" style=\"cursor:pointer\">`;
-						html += `<img src=\"${c.querySelector('img').src}\" alt=\"${c.dataset.title}\" style=\"height:120px;object-fit:cover\">`;
-						html += `<div class=\"card-body\"><div class=\"meta\">${c.querySelector('.meta').textContent}</div><div class=\"title\">${c.dataset.title}</div></div></div>`;
-					});
-					html += `</div>`;
-				}
-				html += `</section>`;
-			});
+document.getElementById("closeBtn").onclick=()=>{
+document.getElementById("details").classList.remove("open");
+};
 
-			collectionView.innerHTML = html;
+document.getElementById("emailForm").onsubmit=e=>{
+e.preventDefault();
+alert("Subscribed!");
+};
+</script>
 
-			// wire back button
-			document.getElementById('backHome').addEventListener('click',()=>{
-				collectionView.style.display='none';
-				recipes.style.display='grid';
-			});
-
-			// wire clicks on collection cards to open details
-			collectionView.querySelectorAll('[data-col-title]').forEach(el=>el.addEventListener('click',()=>{
-				const title = el.dataset.colTitle;
-				const target = cards.find(c=>c.dataset.title===title);
-				if(target) target.click();
-			}));
-
-			// Tabs interaction: switch panels and set active state
-			const tabButtons = document.querySelectorAll('.tab');
-			const tabPanels = document.querySelectorAll('.tab-panel');
-			tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
-				tabButtons.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-				tabPanels.forEach(p=>{ p.classList.remove('active'); p.setAttribute('aria-hidden','true'); });
-				btn.classList.add('active');
-				btn.setAttribute('aria-selected','true');
-				const id = btn.dataset.tab;
-				const panel = document.getElementById(id);
-				if(panel){ panel.classList.add('active'); panel.setAttribute('aria-hidden','false'); panel.scrollIntoView({behavior:'smooth'}); }
-			}));
-		}
-	</script>
 </body>
 </html>
