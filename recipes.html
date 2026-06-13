@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recipes — Nely's Notebook</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Recipes</h1>
+        <p>Browse the family recipes.</p>
+
+        <input id="search" class="search" placeholder="Search recipes...">
+
+        <div class="hero-tabs">
+
+          <div class="top-meals">
+            <button class="top-meal-btn active" data-meal="all">All</button>
+            <button class="top-meal-btn" data-meal="appetizer">Appetizer</button>
+            <button class="top-meal-btn" data-meal="breakfast">Breakfast</button>
+            <button class="top-meal-btn" data-meal="lunch">Lunch</button>
+            <button class="top-meal-btn" data-meal="dinner">Dinner</button>
+            <button class="top-meal-btn" data-meal="dessert">Dessert</button>
+            <button class="top-meal-btn" data-meal="side">Side</button>
+          </div>
+
+          <div class="top-prefs">
+            <button class="top-pref-btn active" data-pref="all">All</button>
+            <button class="top-pref-btn" data-pref="vegetarian">Vegetarian</button>
+            <button class="top-pref-btn" data-pref="vegan">Vegan</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="recipes"></section>
+
+  </main>
+
+  <div class="details" id="details">
+    <div class="panel">
+      <button id="closeBtn">✕</button>
+      <h2 id="detailTitle"></h2>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <footer>© Nely's Recipes</footer>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
