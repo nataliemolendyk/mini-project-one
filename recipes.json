@@ -1,0 +1,393 @@
+{
+  "recipes": [
+    {
+      "title": "Caprese Skewers",
+      "meal": ["appetizer", "lunch"],
+      "ingredients": [
+        "24 cherry tomatoes",
+        "12 mini mozzarella balls",
+        "24 basil leaves",
+        "Extra-virgin olive oil, for drizzling",
+        "Balsamic reduction, for drizzling",
+        "Sea salt and freshly ground black pepper"
+      ],
+      "steps": [
+        "Thread the tomatoes, mozzarella, and basil onto mini skewers.",
+        "Drizzle with olive oil and balsamic reduction and sprinkle with salt and pepper."
+      ],
+      "meta": "",
+      "image": "images/caprese skewers.png"
+    },
+    {
+      "title": "Carrot Cake",
+      "meal": "dessert",
+      "ingredients": [
+        "1 1/2 cups flour",
+        "1 1/4 cups sugar",
+        "3/4 cup brown sugar",
+        "1 1/4 tsp. baking powder",
+        "1 tsp. baking soda",
+        "1 1/2 tsp. cinnamon",
+        "1/2 tsp. ground nutmeg",
+        "1/2 tsp. ground ginger",
+        "1/2 tsp. salt",
+        "4 eggs, room temperature",
+        "1/2 cups canola oil",
+        "1/2 tsp. vanilla extract",
+        "2 cups grated carrots",
+        "Cream cheese frosting"
+      ],
+      "steps": [
+        "Preheat oven to 350°.",
+        "Sift together first 9 ingredients into a mixing bowl.",
+        "Beat in eggs until batter becomes thick and pale yellow, 3 minutes.",
+        "Slowly beat in oil and vanilla.",
+        "Add the wet ingredients to the dry and mix until combined.",
+        "Fold in carrots.",
+        "Pour batter into 2 greased 8-in. round pans lined with parchment paper.",
+        "Bake 35 to 40 minutes or until a toothpick inserted in the center of the cake comes out clean.",
+        "Allow layers to cool completely before icing with your favorite cream cheese frosting."
+      ],
+      "meta": "Makes 1(8-in.) cake",
+      "image": "images/carrot cake.webp"
+    },
+    {
+      "title": "Chicken with Sesame-Miso Slaw",
+      "meal": ["dinner", "lunch"],
+      "ingredients": [
+        "1 chicken, 3 1/2 to 4 lb.",
+        "1 tsp. minced garlic",
+        "1 tsp. grated ginger",
+        "1/2 tsp. five-spice powder",
+        "1 Tbs. honey",
+        "1/2 cup soy sauce",
+        "1/4 tsp. red pepper flakes",
+        "Sesame-Miso Slaw"
+      ],
+      "steps": [
+        "Cut the chicken into 12 serving pieces - 2 drumsticks. 2 thighs. 4 breast quareters and 4 wing segments (each wing cut into a drumette and a flat) or have your butcher do this for you.",
+        "In a medium bowl, whisk together the garlic, ginver, five-spice powder, honey, soy sauce and red pepper flakes; transfer to a large sealable plastic bag. Add the chicken to the bag and marinate at room temperature for 1 hour.",
+        "Preheat a Breville convection oven to 400 degrees F on convection roast mode. Line a baking sheet with foil. Arrange chicken on the baking sheet and roast for 25 minutes. Serve the chicken with the slaw alongside."
+      ],
+      "meta": "Serves 4",
+      "image": "images/chicken with sesame-miso slaw.jpg"
+    },
+    {
+      "title": "Chocolate Hazelnut Brownies",
+      "meal": "dessert",
+      "ingredients": [
+        "4 extra-large eggs",
+        "Pinch of fine sea salt",
+        "1 cup chocolate hazelnut spread",
+        "Powdered sugar"
+      ],
+      "steps": [
+        "Preheat oven to 350°. Line the base and sides of an 8-in.-square cake pan with parchment paper.",
+        "In the bowl of an electric mixer fitted with the whisk attachment, beat eggs and salt on high until eggs have more than doubled in size and are pale and mousselike.",
+        "Place chocolate spread into a heat-safe bowl, and microwave for 1 minute on high, stirring after 30 seconds, or until slightly runny.",
+        "Pour the heated chocolate in a continuous trickle into the eggs, beating on medium-high as you go, until fully combined. This will decrease the volume of the eggs quite a bit.",
+        "Pour mixture into the prepared pan, and bake for 17 to 20 minutes, or until a toothpick comes out clean.",
+        "Cool completely in the pan, about 1 hour. Remove from pan, cut into 16 squares, and dust generously with powdered sugar."
+      ],
+      "meta": "Makes 16 brownies Active time: 10 minutes Total time: 30 minutes",
+      "image": "images/chocolate hazelnut brownies.jpg"
+    },
+    {
+      "title": "Chocolate-Chocolate Pancakes",
+      "meal": "breakfast",
+      "ingredients": [
+        "1 2/3 cups flour",
+        "1/3 cup unsweetened cocoa powder",
+        "2 teaspoons baking powder",
+        "1/4 teaspoon salt",
+        "1/3 cup granulated sugar",
+        "1 cup chocolate chips",
+        "2 eggs",
+        "2 teaspoons vanilla",
+        "5 tablespoons butter, melted and cooled",
+        "1 1/4 cups (plus up to 1/4 cup more) milk",
+        "1 pint raspberries",
+        "2 tablespoons sugar",
+        "1/4 cup water",
+        "1/4 cup raspberry liqueur"
+      ],
+      "steps": [
+        "Put the flour, cocoa, baking powder, salt, and sugar through a sieve placed over a large mixing bowl. Add the chocolate chips to the dry ingredients. Beat the eggs and vanilla together.",
+        "Add melted butter, then milk, and continue to blend. Pour the liquid mix over the dry ingredients, and stir thoroughly. It should be about the consistency of a really good chocolate milkshake.",
+        "Place a platter in the oven, and turn the heat to 200°F. As you make the pancakes, put them on the platter so that they stay warm until you're ready.",
+        "Place a griddle or a large skillet over moderate heat, and brush the surface with a little melted butter. Using a ladle, drop batter onto the griddle to make pancakes about 2-3 inches across. Cook until the edges begin to look dry and bubbles appear on the surface. Flip gently, and cook for another minute on the other side.",
+        "Place half of the raspberries in a small saucepan over medium heat. Stir in the sugar, water, and liqueur. When the raspberries start to collapse and liquefy, turn the heat down to low, and cook until they're very soft.",
+        "Pour through a strainer to remove the seeds, pushing against the solids to extract all of the juice. Add the remainder of the raspberries to the juice, and stir. Set aside until the pancakes are done.",
+        "Serve 3-5 pancakes per person, topped with the raspberry sauce and berries."
+      ],
+      "meta": "Serves 4",
+      "image": "images/chocolate-chocolate pancakes.png"
+    },
+    {
+      "title": "Flourless Raspberry Chocolate Cake",
+      "meal": "dessert",
+      "ingredients": [
+        "1/3 cup plus 1 tablespoon unsalted butter, divided",
+        "2(1-ounce) squares bittersweet chocolate",
+        "2(1-ounce) squares unsweetened chocolate",
+        "7 tablespoons seedless red raspberry jam, divided",
+        "2 tablespoons orange zest",
+        "2 large eggs",
+        "1/3 cup sugar",
+        "1/4 cup orange juice",
+        "Garnish: frozen whipped topping, fresh raspberries"
+      ],
+      "steps": [
+        "Preheat oven to 350°. Lightly grease 2 ramekins using 1 tablespoon of butter. Line the bottom of the ramekins with parchment paper.",
+        "In a medium bowl, combine chocolates and remaining 1/3 cup butter. Microwave on high, in 30-second intervals, stirring between each, until melted. Add 4 tablespoons raspberry jam and orange zest. Stir to combine. Allow mixture to cool slightly.",
+        "In a medium bowl, combine eggs and sugar. Whisk egg mixture into cooled chocolate mixture. Pour batter into prepared ramekins. Place ramekins in a roasting pan. Fill pan with water until it reaches halfway up the outside of the ramekins. Cover roasting pan with aluminum foil, sealing well on edges. Bake for 1 hour.",
+        "Remove roasting pan from oven, and allow cakes to cool in water for 15 min-utes. Remove ramekins from pan, and allow to cool. Chill cakes for 4 hours, or overnight.",
+        "In a small bowl, combine remaining 3 tablespoons seedless raspberry jam and orange juice. Microwave on high in 30-sec-ond intervals, stirring between each, until melted (about 1 1/2 minutes total).",
+        "Serve sauce with cake. Garnish with whipped topping and raspberries, if desired."
+      ],
+      "meta": "",
+      "image": "images/flourless rasberry chocolate cake.jpg"
+    },
+    {
+      "title": "Mexican Cornbread",
+      "meal": "side",
+      "ingredients": [
+        "2 large eggs lightly beaten",
+        "2/3 cup safflower oil",
+        "1/2 cup sour cream",
+        "One 15 ounce can creamed corn",
+        "2 tablespoons minced onion",
+        "One 7 ounce can green chiles (Ortega) finely chopped",
+        "1 and 1/2 cups yellow cornmeal",
+        "2 tablespoons baking powder",
+        "1/4 pound cheddar cheese"
+      ],
+      "steps": [
+        "Pre-heat the oven to 350 degrees.",
+        "Oil a 9 inch pan.",
+        "Mix together the oil, sour cream and creamed corn.",
+        "Mix in onions and chiles (add some Jalapenos if you'd like to put some fire into the corn bread).",
+        "Mix the dry ingredients- mix quickly leaving a few lumps.",
+        "Pour half the batter into the prepared pan and top with cheddar cheese.",
+        "Cover with remaining batter. Bake 45 minutes or until done.",
+        "Let cool at least 10 minutes before serving."
+      ],
+      "meta": "Serves 8",
+      "image": "images/mexican cornbread.jpg"
+    },
+    {
+      "title": "Mexican Wedding Cookies",
+      "meal": "dessert",
+      "ingredients": [
+        "1 cup unsalted butter, at room temperature",
+        "1/2 cup powdered sugar, plus more for dusting",
+        "2 teaspoons vanilla extract",
+        "1 3/4 cups pecan halves, very finely chopped",
+        "1 1/3 cups all-purpose flour",
+        "6 tablespoons rye flour",
+        "1 teaspoon kosher salt"
+      ],
+      "steps": [
+        "In a bowl of a standing mixer fitted with a paddle attachment, beat the butter on medium speed until pale and glossy, about 5 minutes. Add powdered sugar and beat on low speed to high until very light and fluffy, about 5 minutes, scraping down the sides of the bowl about halfway through.",
+        "Add the vanilla and beat for 1 minute. Add the nuts and beat briefly on low speed just until incorporated.",
+        "In a small bowl, whisk together the flours and salt. Add to the batter and mix on very low speed until just incorporated and the mixture forms a loose, shaggy dough. Do not overmix. Wrap in plastic wrap and refrigerate for 2 hours.",
+        "Preheat oven to 325 degrees F. Line a baking sheet with parchment paper.",
+        "Shape the dough into ping-pong-size balls and place them about 2 inches apart on the prepared baking sheet. Transfer the whole sheet to the refrigerator for 5 minutes to re-chill briefly. Bake until just barely golden on top, 20 to 25 minutes.",
+        "Once cookies are cooled, dust with powdered sugar and enjoy."
+      ],
+      "meta": "Makes about 40 cookies",
+      "image": "images/mexican wedding cookies.jpg"
+    },
+    {
+      "title": "Parmigiano Pumpkin Soup",
+      "meal": ["dinner", "lunch"],
+      "ingredients": [
+        "2 tablespoons olive oil",
+        "2 ounces thinly sliced prosciutto, cut into thin strips",
+        "1 large onion, diced",
+        "3 cloves garlic, minced",
+        "1 (28 ounce) can pure pumpkin",
+        "2 quarts vegetables or 2 quarts chicken broth",
+        "1/8 teaspoon nutmeg",
+        "1 teaspoon salt",
+        "1/2 teaspoon white pepper",
+        "1/2 cup cream",
+        "1/2 cup grated parmesan cheese",
+        "2 tablespoons chopped fresh parsley"
+      ],
+      "steps": [
+        "Heat the oil in a large deep skillet over med-high heat. Add the meat and saute until crisp and frizzled, about 1 minute. Remove and reserve.",
+        "Reduce heat to medium, add onion and saute till tender(do not brown) about 3 minutes. Add garlic and cook a few seconds, until aromatic. Stir in pumpkin, broth, nutmeg, salt, and pepper and bring to a boil. Transfer to slow cooker, cover and cook 3-4 hours on high, 6-8 hours on low.",
+        "Stir in the cream and cheese and heat through, about 5 minute. Stir in parsley and garnish with prosciutto."
+      ],
+      "meta": "Serves 8 Precook: 5 minutes Slow cook: 3-4 hours on high, or 6-8 hours on low in a 5-6 qt. slow cooker At the end: 5 minutes",
+      "image": "images/parmagiano pumpkin soup.png"
+    },
+    {
+      "title": "Raspberry Cream Cheese Coffee Cake",
+      "meal": "breakfast",
+      "ingredients": [
+        "3/4 cup old-fashioned rolled oats",
+        "1/4 cup packed light brown sugar",
+        "1/4 cup all-purpose flour",
+        "1/4 cup chopped pecans",
+        "1/4 cup unsalted butter, melted",
+        "1 3/4 cups all-purpose flour",
+        "1 teaspoon baking powder",
+        "1/2 teaspoon baking soda",
+        "1/4 teaspoon salt",
+        "1 package (8 oz) cream cheese, softened",
+        "1/2 cup unsalted butter, softened",
+        "1 cup granulated sugar",
+        "2 eggs",
+        "1/4 cup whipping (35%) cream",
+        "1/2 teaspoon vanilla extract",
+        "1 cup fresh raspberries, crushed"
+      ],
+      "steps": [
+        "Preheat oven to 350° F.",
+        "13\" x 9\" metal baking pan, lined with foil, then lined with parchment paper",
+        "In a bowl, combine oats, brown sugar, flour, pecans, and butter until crumbly. Set aside.",
+        "In a bowl, whisk together flour, baking powder, baking soda, and salt. Set aside.",
+        "In a mixer bowl fitted with paddle attachment, beat cream cheese, butter, and sugar until fluffy; for 3 minutes. Add eggs, one at a time, beating well between each addition. Using a wooden spoon, stir in flour mixture alternating with cream, making 3 additions of flour mixture and 2 of cream, just until blended. Beat in vanilla.",
+        "Spread batter into pan, smoothing top. Sprinkle raspberries on top. Sprinkle with topping. Bake in preheated oven until light brown and a toothpick inserted into center comes out clean, 30 to 35 minutes. Let cool in pan on a rack, about 30 minutes. Transfer to rack to cool completely."
+      ],
+      "meta": "Tip: Make sure your cream cheese and butter are softened before mixing or you will have chunks in your batter",
+      "image": "images/rasberry cream cheese coffee cake.jpg"
+    },
+    {
+      "title": "Sausage, Tomato, and Arugula Fettuccine",
+      "meal": ["dinner", "lunch"],
+      "ingredients": [
+        "1(9-ounce) package refrigerated fettuccine",
+        "1 tablespoon olive oil",
+        "6 ounces Italian turkey sausage",
+        "2 teaspoons minced garlic",
+        "1 pint cherry tomatoes",
+        "1/4 teaspoon salt",
+        "1/4 teaspoon freshly ground black pepper",
+        "3 cups baby arugula leaves",
+        "2 ounces pecorino Romano cheese, shaved"
+      ],
+      "steps": [
+        "Cook pasta according to package directions, omitting salt and fat. Drain in a colander over a bowl, reserving cup cooking liquid.",
+        "While pasta cooks, heat oil in a large skillet over medium-high heat. Remove casings from sausage. Break sausage into bite-sized pieces and add to pan; cook 3 minutes or until browned, stirring frequently to crumble. Add garlic; cook 30 seconds, stirring constantly. Add tomatoes, salt, and pepper; cover and cook 2 minutes.",
+        "Mash tomatoes with the back of a wooden spoon to break them up. Cover pan; reduce heat to low, and cook 3 minutes. Remove pan from heat. Add pasta, reserved ⅔ cup cooking liquid, and arugula; toss well. Sprinkle with pecorino Romano"
+      ],
+      "meta": "Serves 4",
+      "image": "images/sausage, tomato, and arugula fetuccine.jpg"
+    },
+    {
+      "title": "Spicy Italian Sausage Meatloaf",
+      "meal": ["dinner", "lunch"],
+      "ingredients": [
+        "3 slices day-old white bread",
+        "1/3 cup whole milk",
+        "1 cup chopped button mushrooms",
+        "1 lb. hot Italian sausage, casings removed",
+        "1 lb. ground beef",
+        "1 cup finely chopped yellow onion",
+        "1 cup grated carrots",
+        "1 large egg",
+        "1 tbsp. Worcestershire sauce",
+        "2 tsp. kosher salt",
+        "1 tsp. red pepper flakes",
+        "1/2 tsp. black pepper",
+        "1/4 cup ketchup",
+        "2 tbsp. light brown sugar"
+      ],
+      "steps": [
+        "Preheat oven to 350°F. Coat a 9 x 5-in. loaf pan with cooking spray.",
+        "Process the bread in a food processor until finely crumbled, yielding about 1 cup. Transfer crumbs to a large bowl. Add the milk, and let soak 5 minutes.",
+        "Process the mushrooms in food processor until finely chopped. Add mushrooms and the next 9 ingredients to breadcrumb mixture, and gently mix, using your hands, until just combined.",
+        "Shape mixture into a loaf, and place in prepared pan.",
+        "Stir together the ketchup and brown sugar in a small bowl, and spread over top.",
+        "Bake until meatloaf is cooked through and glaze is slightly dried, about 60 to 70 minutes. Let cool 10 minutes before cutting into eight slices."
+      ],
+      "meta": "Serves 8 Active time: 20 min. Total time: About 90 min.",
+      "image": "images/spicy italian sausage meatloaf.jpg"
+    },
+    {
+      "title": "Tofu with Snap Peas and Scallions",
+      "meal": ["dinner", "lunch"],
+      "ingredients": [
+        "1 1/4 oz block soft tofu, quartered",
+        "1 tsp vegetable oil",
+        "4 oz sugar snap peas, thinly sliced",
+        "2 scallions, thinly sliced, greens and whites separated",
+        "1/2 tsp red pepper flakes",
+        "1 Tbsp sesame seeds",
+        "1 small clove garlic, minced",
+        "1 1/2 tsp sesame oil",
+        "1 1/2 Tbsp reduced-sodium soy sauce",
+        "1/2 tsp cane sugar",
+        "Coarse salt"
+      ],
+      "steps": [
+        "In a medium pot, cover tofu with water and bring to a gentle simmer.",
+        "Remove from heat and set aside.",
+        "Heat oil in a medium skillet over medium heat. Add peas and scallion whites and sauté, stirring, until peas are crisp-tender, about 2 minutes. Transfer to a medium bowl.",
+        "Mix in scallion greens, red pepper flakes, sesame seeds, garlic, sesame oil, soy sauce, sugar, and 1 Tbsp water. Season with salt.",
+        "Drain tofu and divide among plates. Top with pea mixture."
+      ],
+      "meta": "Serves 4",
+      "image": "images/tofu with snap peas and scallions.png"
+    },
+    {
+      "title": "Tomato and Cucumber Salad",
+      "meal": ["side", "lunch"],
+      "ingredients": [
+        "3 Wiodset Farms Doice Super Sweet Baby Bell Peppers, seeded and chopped",
+        "1 Windset Farms Fresco Long English Cucumber, seeded and chogged",
+        "20 Windset Farms Concerto Toenatoes, halved",
+        "2 Kalamata olives, chopped",
+        "2 small shallots, peeled and finely minced",
+        "2 doves garlic peeled and finely minced",
+        "1/4 cup lemon juice",
+        "1/4 cup red wine vinegar",
+        "2 teaspoons Dijon mustard",
+        "2 teaspoons honey",
+        "2 tablespoons fresh dill, finely chopped",
+        "2 teaspoons fresh oregano, finely chopped",
+        "1/2 teaspoon kosher salt",
+        "1/4 cup extra-virgin olive oil",
+        "1/4 cup mayonnaise",
+        "1/4 cup sour cream"
+      ],
+      "steps": [
+        "Place salad ingredients in a medium bowl and set aside.",
+        "In a separate medium bowl, whisk together shallots, garlic, lemon juice, vinegar, mustard, honey, dill, oregano and salt. Slowly whisk in olive oil.",
+        "Whisk in mayonnaise and sour cream, blending well.",
+        "Add desired amount of dressing to salad and gently stir until blended."
+      ],
+      "meta": "Serves 4",
+      "image": "images/tomato and cucumber salad.png"
+    },
+    {
+      "title": "Banana Pudding",
+      "meal": "dessert",
+      "ingredients": [
+        "3 eggs, separated",
+        "2 cups half-and half",
+        "3/4 cup sugar",
+        "1/2 cup all-purpose flour",
+        "1/2 tsp. kosher salt",
+        "2 tbsp. unsalted butter, room temperature",
+        "2 1/2 tsp. pure vanilla extract, divided",
+        "1/4 tsp. cream of tartar",
+        "1/4 cup powdered sugar",
+        "1/2 (11-oz.) box vanilla wafers (about 44)",
+        "3 ripe bananas, sliced 1/4-in. thick"
+      ],
+      "steps": [
+        "Preheat oven to 350°. For the pudding, whisk egg yolks together in a medium bowl: set aside. Whisk half-and-half and sugar in a stainless steel bowl or a double boiler set over simmering water. Whisk in flour and salt until combined, about 2 minutes: remove from heat",
+        "Gradually add half of the hot cream mixture to egg yolks, whisking constantly to temper the eggs. Whisk egg mixture into remaining hot cream and place back over the simmering water. Cook, whisking constantly, until thickened to the consistency of pudding, about 7 minutes. Remove from heat. Stir in butter and 2 tsp. vanilla extract: set aside.",
+        "For the meringue, beat egg whites in the bowl of an electric mixer fitted with a whisk attachment on high until foamy, about 30 seconds. Add the cream of tartar, powdered sugar and remaining vanilla. Continue beating until stiff peaks form.",
+        "To assemble, cover the bottom of an 8x8-in. baking dish with half of the vanilla wafers. Top with half of the banana slices and half of the pudding, spreading evenly.",
+        "Repeat with a second layer, ending with pudding. Spread meringue over entire pudding, forming peaks. Bake for 12 to 15 minutes or until golden brown on top. Let cool completely."
+      ],
+      "meta": "Serves 8 Active time: 30 minutes Total time: 45 minutes",
+      "image": "images/banana pudding.jpg"
+    }
+  ]
+}
