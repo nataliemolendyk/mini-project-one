@@ -42,4 +42,4 @@ She wants to have a clean looking website and the colors include light pink and 
 - Maybe add borders around the pictures to help with the blandness.
 - Include boxes around ingredients and bold specific words in steps to help with the aesthetic view.
 
-- [[Website sketch](website-sketch.jpeg)]
+- [[Website sketch](images/website-sketch.jpeg)]

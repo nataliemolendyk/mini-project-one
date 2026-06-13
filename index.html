@@ -1,143 +1,81 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Nely's Notebook</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nely's Notebook</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	<div class="top-bar">
-	<div class="top-bar-inner">
-	<div class="top-meals">
-		<button class="top-meal-btn active" data-meal="all">All</button>
-		<button class="top-meal-btn" data-meal="breakfast">Breakfast</button>
-		<button class="top-meal-btn" data-meal="lunch">Lunch</button>
-		<button class="top-meal-btn" data-meal="dinner">Dinner</button>
-		<button class="top-meal-btn" data-meal="dessert">Dessert</button>
-	</div>
-		<div class="top-prefs">
-			<button class="top-pref-btn active" data-pref="all">All</button>
-			<button class="top-pref-btn" data-pref="vegetarian">Vegetarian</button>
-			<button class="top-pref-btn" data-pref="vegan">Vegan</button>
-			<button class="top-pref-btn" data-pref="clean">Clean</button>
-	</div>
-	</div>
-	</div>
+<body class="home">
 
-<main>
-	<section class="hero">
-	<div class="hero-content">
-	<h1>Nely's Notebook</h1>
-	<p>Family recipes saved forever.</p>
-	<input id="search" class="search" placeholder="Search recipes...">
-			<div class="email-capture hero-email">
-				<div>
-					<strong style="color:var(--brown)">Join the family list</strong>
-					<div style="font-size:13px;color:var(--muted)">Sign up for updates and new recipes (visual-only at launch)</div>
-				</div>
-				<form id="emailForm" onsubmit="return false;">
-					<input id="emailInput" type="email" placeholder="you@example.com" required />
-					<button class="btn" type="submit">Subscribe</button>
-				</form>
-			</div>
-	</div>
-	</section>
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="recipe-upload">
-	<input id="recipePhoto" type="file" accept="image/*" capture="environment" hidden>
-	<button class="btn" id="scanBtn">📸 Scan Recipe</button>
-</div>
+  <main>
 
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Nely's Notebook</h1>
+        <p>Family recipes saved forever.</p>
 
-<section class="grid" id="recipes">
+        <div class="hero-actions">
+          <a class="btn" id="browseBtn" href="recipes.html">Browse Recipes</a>
+        </div>
 
-	<article class="card" data-title="banana bread" data-meal="breakfast" data-keywords="banana baking vegetarian">
-	<img src="https://images.unsplash.com/photo-1548943487-a2e4d0c5d4b0">
-	<div class="card-body">
-	<div class="meta">Breakfast • 60 min</div>
-	<h2>Banana Bread</h2>
-		<div class="tags">
-		<span class="tag">banana</span>
-		<span class="tag">baking</span>
-	</div>
-	</div>
-	</article>
+        <div class="email-capture hero-email">
+          <div>
+            <strong style="color:var(--brown)">Join the family list</strong>
+            <div style="font-size:13px;color:var(--muted)">Sign up for updates and new recipes</div>
+          </div>
+          <form id="emailForm">
+            <input id="emailInput" type="email" placeholder="you@example.com" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-	<article class="card" data-title="chocolate cake" data-meal="dessert" data-keywords="chocolate baking vegetarian">
-	<img src="https://images.unsplash.com/photo-1542826438-9b4c9b0f0a23">
-	<div class="card-body">
-	<div class="meta">Dessert • 75 min</div>
-	<h2>Chocolate Cake</h2>
-		<div class="tags">
-		<span class="tag">chocolate</span>
-		<span class="tag">cake</span>
-		</div>
-	</div>
-	</article>
+    <section class="featured">
+      <h2>Featured Recipes</h2>
+      <div class="featured-grid" id="featured"></div>
+    </section>
 
-</section>
-</main>
+  </main>
 
-<div class="details" id="details">
-<div class="panel">
-	<button id="closeBtn">✕</button>
-<h2 id="detailTitle"></h2>
-	<div id="detailContent"></div>
-</div>
-</div>
+  <div class="details" id="details">
+    <div class="panel">
+      <button id="closeBtn">✕</button>
+      <h2 id="detailTitle"></h2>
+      <div id="detailContent"></div>
+    </div>
+  </div>
 
-<footer>© Nely's Recipes</footer>
+  <footer>© Nely's Recipes</footer>
 
-<script>
-const search=document.getElementById("search");
-const cards=[...document.querySelectorAll(".card")];
-let meal="all",pref="all";
+  <script>
+    const browse = document.getElementById("browseBtn");
+    if (browse) {
+      browse.onclick = () => {
+        const target = document.getElementById("featured") || document.getElementById("recipes");
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      };
+    }
 
-function filter(){
-let q=search.value.toLowerCase();
-cards.forEach(card=>{
-let show=card.dataset.title.includes(q)&&(meal==="all"||card.dataset.meal===meal)&&(pref==="all"||card.dataset.keywords.includes(pref));
-card.style.display=show?"":"none";
-});
-}
+    document.getElementById("emailForm").onsubmit = e => {
+      e.preventDefault();
+      alert("Subscribed!");
+    };
+  </script>
 
-search.oninput=filter;
-
-document.querySelectorAll(".top-meal-btn").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll(".top-meal-btn").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-meal=btn.dataset.meal;
-filter();
-};
-});
-
-document.querySelectorAll(".top-pref-btn").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll(".top-pref-btn").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-pref=btn.dataset.pref;
-filter();
-};
-});
-
-cards.forEach(card=>{
-card.onclick=()=>{
-document.getElementById("detailTitle").textContent=card.dataset.title;
-document.getElementById("details").classList.add("open");
-};
-});
-
-document.getElementById("closeBtn").onclick=()=>{
-document.getElementById("details").classList.remove("open");
-};
-
-document.getElementById("emailForm").onsubmit=e=>{
-e.preventDefault();
-alert("Subscribed!");
-};
-</script>
+  <script src="app.js"></script>
 
 </body>
 </html>
