@@ -20,12 +20,19 @@ body {
   background: var(--rose);
   color: var(--text);
   font-family: Inter, system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 a {
   background: var(--cream);
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: 0;
   text-decoration: none;
   color: inherit;
   display: inline-block;
@@ -43,18 +50,62 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: transparent;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(91, 53, 38, 0.10);
+  box-shadow: 0 2px 12px rgba(91, 53, 38, 0.07);
 }
 
 .top-bar-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 15px 25px;
+  padding: 14px 25px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--brown);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.site-title:hover {
+  background: none;
+  transform: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.main-nav a {
+  background: transparent;
+  color: var(--brown-soft);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 14px;
+  border-radius: 0;
+  transition: background .15s, color .15s;
+}
+
+.main-nav a:hover {
+  background: var(--rose-light);
+  color: var(--brown);
+  transform: none;
 }
 
 .top-meals,
@@ -68,9 +119,11 @@ a:hover {
 .top-pref-btn {
   border: 0;
   background: #fff;
-  padding: 9px 16px;
-  border-radius: 999px;
+  padding: 8px 12px;
+  border-radius: 0;
   color: var(--brown-soft);
+  font-family: Georgia, serif;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: .2s;
@@ -91,7 +144,7 @@ a:hover {
   max-width: 1200px;
   height: 460px;
   margin: 40px auto;
-  border-radius: 40px;
+  border-radius: 0;
   overflow: hidden;
   background-color: var(--cream);
   background-repeat: repeat-x;
@@ -105,20 +158,27 @@ a:hover {
 .hero-content,
 .hero .content {
   padding: 60px;
-  max-width: 650px;
-  border-radius: 14px;
+  max-width: 800px;
+  border-radius: 0;
 }
 
 .hero h1,
 .hero h2 {
-  font-family: Georgia, serif;
+  font-family: 'Rochester', cursive;
   font-size: 70px;
   line-height: 1;
   margin: 0;
   color: var(--brown);
 }
 
+/* Home page hero title uses Dancing Script */
+.home .hero h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 80px;
+}
+
 .hero p {
+  font-family: Georgia, serif;
   font-size: 20px;
   color: var(--brown-soft);
 }
@@ -126,6 +186,7 @@ a:hover {
 /* About page centers hero content */
 .about .hero {
   justify-content: center;
+  border-radius: 0;
 }
 
 .about .hero-content {
@@ -133,25 +194,35 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 0;
+}
+
+.script-label {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
 }
 
 /* Tabs under search on recipes page */
 .hero-tabs {
   margin-top: 18px;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
-.hero-tabs .top-meals,
+.hero-tabs .top-meals {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .hero-tabs .top-prefs {
   display: flex;
-  gap: 10px;
-}
-
-.hero-tabs .top-prefs {
-  margin-left: 12px;
+  gap: 8px;
+  align-items: center;
+  margin-left: 0;
 }
 
 
@@ -165,7 +236,7 @@ main {
 
 .search {
   border: 0;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 14px 20px;
   width: 280px;
   background: white;
@@ -177,7 +248,7 @@ main {
 
 .email-capture {
   background: white;
-  border-radius: var(--radius);
+  border-radius: 0;
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -194,7 +265,7 @@ main {
 
 .email-capture input {
   padding: 12px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid #ddd;
 }
 
@@ -202,7 +273,7 @@ main {
   background: rgba(255, 255, 255, 0.92);
   box-shadow: none;
   padding: 18px;
-  border-radius: 14px;
+  border-radius: 0;
   margin-top: 22px;
   width: 100%;
   display: flex;
@@ -234,7 +305,7 @@ main {
 }
 
 .featured h2 {
-  font-family: Georgia, serif;
+  font-family: 'Dancing Script', cursive;
   font-size: 32px;
   color: var(--brown);
   margin: 8px 0 18px;
@@ -259,7 +330,7 @@ main {
 
 .card {
   background: var(--paper);
-  border-radius: var(--radius);
+  border-radius: 0;
   overflow: hidden;
   box-shadow: var(--shadow);
   cursor: pointer;
@@ -296,6 +367,27 @@ main {
   display: block;
 }
 
+/* Popup text colors */
+.details .panel #detailTitle {
+  color: var(--rose);
+}
+
+.details .panel ul,
+.details .panel ol,
+.details .panel p,
+.details .panel .meta {
+  color: var(--cream);
+  font-family: Georgia, serif;
+}
+
+/* Ingredients & directions section headings */
+.details .panel h3 {
+  color: var(--rose);
+  background: transparent;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
 .meta {
   color: var(--muted);
   font-size: 14px;
@@ -309,6 +401,11 @@ main {
   margin: 10px 0;
 }
 
+b, strong {
+  font-family: 'Rochester', cursive;
+  font-weight: normal;
+}
+
 .tags {
   display: flex;
   gap: 8px;
@@ -318,7 +415,7 @@ main {
 .tag {
   background: var(--rose-light);
   color: var(--brown);
-  border-radius: 999px;
+  border-radius: 0;
   padding: 6px 14px;
   font-size: 13px;
 }
@@ -330,7 +427,7 @@ main {
   background: var(--brown);
   color: white;
   border: 0;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 12px 25px;
   font-weight: 700;
   cursor: pointer;
@@ -362,9 +459,9 @@ main {
 .details .panel {
   position: relative;
   width: min(850px, 90%);
-  background: white;
+  background: var(--brown);
   padding: 35px;
-  border-radius: 35px;
+  border-radius: 0;
   box-shadow: var(--shadow);
   max-height: 90vh;
   overflow-y: auto;
@@ -374,9 +471,9 @@ main {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: white;
-  border-radius: 999px;
-  border: 1px solid #eee;
+  background: var(--brown-soft);
+  border-radius: 0;
+  border: 1px solid rgba(255,255,255,0.15);
   width: 36px;
   height: 36px;
   display: flex;
@@ -385,13 +482,13 @@ main {
   font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  color: var(--brown-soft);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  color: var(--cream);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   z-index: 60;
 }
 
 .details .panel #closeBtn:hover {
-  background: var(--rose-light);
+  background: var(--rose);
   color: var(--brown);
   transform: scale(1.04);
 }
@@ -401,8 +498,13 @@ main {
 
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 28px 40px;
   color: var(--muted);
+  background: var(--cream);
+  border-top: 1px solid rgba(91, 53, 38, 0.10);
+  box-shadow: 0 -2px 12px rgba(91, 53, 38, 0.07);
+  font-family: Georgia, serif;
+  font-size: 14px;
 }
 
 
@@ -416,6 +518,10 @@ footer {
   .hero h1,
   .hero h2 {
     font-size: 50px;
+  }
+
+  .home .hero h1 {
+    font-size: 60px;
   }
 
   .featured-grid {
@@ -463,5 +569,9 @@ footer {
 
   .featured .card img {
     height: 220px;
+  }
+
+  .site-title {
+    font-size: 22px;
   }
 }
